@@ -20,17 +20,28 @@ body{
 }
 .content{
     width: 100vw;
-    height: auto;
+    height: fit-content;;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-top: 35px;
+    overflow: hidden;
 }
-.image{
-    width: auto;
-    max-width: 800px;
-    height: auto;
+.container{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: fit-content;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.container__image{
+    width: 400px;
+    height: 280px;
+    margin-left: 5px;
+    margin-right: 5px;
     max-height: 500px;
     border-radius: 16px;
 }
