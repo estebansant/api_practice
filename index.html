@@ -8,15 +8,43 @@
     <title>Random Dogs</title>
 </head>
 <body>
-    <h1 class="title">Random Dog Images</h1>
-    <section class="content">
-        <div class="container">
-            <img id="image1" class="container__image" alt="random dog images" />
-            <img id="image2" class="container__image" alt="random dog images" />
-            <img id="image3" class="container__image" alt="random dog images" />
+    <h1 class="title">The Dogs Site</h1>
+    <section class="random__dogs">
+        <h2 class="subtitle">Random Dog Images</h2>
+        <div class="articles">
+            <article class="container">
+                <img id="image1" class="container__image" alt="random dog images" />
+                <div class="container__footer">
+                    <button class="button__card">Add to favorites</button>
+                </div>
+            </article>
+            <article class="container">
+                <img id="image2" class="container__image" alt="random dog images" />
+                <div class="container__footer">
+                    <button class="button__card">Add to favorites</button>
+                </div>
+            </article>
+            <article class="container">
+                <img id="image3" class="container__image" alt="random dog images" />
+                <div class="container__footer">
+                    <button class="button__card">Add to favorites</button>
+                </div>
+            </article>
         </div>
         
-        <button id="button" class="button">Load another image</button>
+        <button id="button" class="button">Load more images</button>
+    </section>
+
+    <section class="random__dogs">
+        <h2 class="subtitle">My Favorite Dogs</h2>
+        <div class="articles">
+            <article class="container">
+                <img id="image" class="container__image" alt="random dog images" />
+                <div class="container__footer">
+                    <button class="button__card">Remove from favorites</button>
+                </div>
+            </article>
+        </div>
     </section>
 
     <script src="./main.js"></script>
