@@ -61,7 +61,8 @@ body{
     margin-left: 5px;
     margin-right: 5px;
     max-height: 500px;
-    border-radius: 16px;
+    border-top-radius: 16px;
+    border-bottom: solid 2px #000000;
 }
 .button__card{
     width: auto;
@@ -91,4 +92,10 @@ body{
 }
 .button:hover{
     cursor: pointer;
+}
+#errorM{
+    width: auto;
+    height: auto;
+    font-size: 1.6rem;
+    color: black;
 }
