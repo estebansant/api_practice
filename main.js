@@ -1,5 +1,7 @@
 const API_URL_RANDOM = 'https://api.thedogapi.com/v1/images/search?limit=3&api_key=live_Eyci7Tf2jCzBSqoXCrpkAQYglDT6BVE1AxBCNgwoobh5C4g9PVnPtgxT5ztU0nQ4';
 const API_URL_FAV = 'https://api.thedogapi.com/v1/favourites?&api_key=live_Eyci7Tf2jCzBSqoXCrpkAQYglDT6BVE1AxBCNgwoobh5C4g9PVnPtgxT5ztU0nQ4';
+const API_URL_FAV_DEL = (id) => `https://api.thedogapi.com/v1/favourites/${id}?&api_key=live_Eyci7Tf2jCzBSqoXCrpkAQYglDT6BVE1AxBCNgwoobh5C4g9PVnPtgxT5ztU0nQ4`;
+
 const button = document.getElementById("button");
 
 const spanError = document.getElementById("errorM");
@@ -40,20 +42,22 @@ async function loadFavoriteDogs () {
     if (response.status !== 200) {
         spanError.innerHTML = "There was an error";
     } else {
+        const div = document.getElementById("favoriteDogs");
+        div.innerHTML = "";
         data.map(dog => {
-            const section = document.getElementById("favoriteDogs");
             const article = document.createElement("article");
             const img = document.createElement("img");
             const button = document.createElement("button");
             const buttonText = document.createTextNode("Remove from favorites");
 
             button.appendChild(buttonText);
+            button.onclick = () => deleteFavoriteDog(dog.id)
             img.src = dog.image.url;
 
             article.appendChild(img);
             article.appendChild(button);
 
-            section.appendChild(article);
+            div.appendChild(article);
         })
     }
 }
@@ -73,10 +77,28 @@ async function saveFavoriteDog (id) {
 
     if (res.status !== 200) {
         spanError.innerHTML = "There was an error" + res.status + data.message;
-    } 
+    } else {
+        console.log('dog saved on favorites');
+        loadFavoriteDogs();
+    }
 
     console.log('save');
     console.log(res);
+}
+
+async function deleteFavoriteDog (id) {
+    const res = await fetch(API_URL_FAV_DEL(id), {
+        method: "DELETE",
+    });
+
+    const data = await res.json();
+
+    if (res.status !== 200) {
+        spanError.innerHTML = "There was an error" + res.status + data.message;
+    } else {
+        console.log('dog removed from favorites');
+        loadFavoriteDogs();
+    }
 }
 
 button.onclick = randomDogs;
