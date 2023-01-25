@@ -10,7 +10,7 @@
 <body>
     <h1 class="title">The Dogs Site</h1>
 
-    <div id="errorM"></div>
+    <span id="errorM"></span>
 
     <section class="random__dogs">
         <h2 class="subtitle">Random Dog Images</h2>
@@ -18,7 +18,7 @@
             <article class="container">
                 <img id="image1" class="container__image" alt="random dog images" />
                 <div class="container__footer">
-                    <button id="btn1" class="button__card">
+                    <button id="btn1" class="container__footer--button">
                         Add to favorites
                     </button>
                 </div>
@@ -26,7 +26,7 @@
             <article class="container">
                 <img id="image2" class="container__image" alt="random dog images" />
                 <div class="container__footer">
-                    <button id="btn2" class="button__card">
+                    <button id="btn2" class="container__footer--button">
                         Add to favorites
                     </button>
                 </div>
@@ -34,19 +34,19 @@
             <article class="container">
                 <img id="image3" class="container__image" alt="random dog images" />
                 <div class="container__footer">
-                    <button id="btn3" class="button__card">
+                    <button id="btn3" class="container__footer--button">
                         Add to favorites
                     </button>
                 </div>
             </article>
         </div>
         
-        <button id="button" class="button">Load more images</button>
+        <button id="button" class="load__button">Load more images</button>
     </section>
 
     <section class="random__dogs">
         <h2 class="subtitle">My Favorite Dogs</h2>
-        <div id="favoriteDogs"></div>
+        <div id="favoriteDogs" class="favorite__dogs"></div>
     </section>
 
     <script src="./main.js"></script>
