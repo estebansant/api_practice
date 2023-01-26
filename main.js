@@ -1,6 +1,6 @@
 const API_URL_RANDOM = 'https://api.thedogapi.com/v1/images/search?limit=3&api_key=live_Eyci7Tf2jCzBSqoXCrpkAQYglDT6BVE1AxBCNgwoobh5C4g9PVnPtgxT5ztU0nQ4';
-const API_URL_FAV = 'https://api.thedogapi.com/v1/favourites?&api_key=live_Eyci7Tf2jCzBSqoXCrpkAQYglDT6BVE1AxBCNgwoobh5C4g9PVnPtgxT5ztU0nQ4';
-const API_URL_FAV_DEL = (id) => `https://api.thedogapi.com/v1/favourites/${id}?&api_key=live_Eyci7Tf2jCzBSqoXCrpkAQYglDT6BVE1AxBCNgwoobh5C4g9PVnPtgxT5ztU0nQ4`;
+const API_URL_FAV = 'https://api.thedogapi.com/v1/favourites';
+const API_URL_FAV_DEL = (id) => `https://api.thedogapi.com/v1/favourites/${id}`;
 
 const button = document.getElementById("button");
 
@@ -34,7 +34,12 @@ async function randomDogs () {
 }
 
 async function loadFavoriteDogs () {
-    const response = await fetch(API_URL_FAV);
+    const response = await fetch(API_URL_FAV, {
+        method: "GET",
+        headers: {
+            'x-api-key': 'live_Eyci7Tf2jCzBSqoXCrpkAQYglDT6BVE1AxBCNgwoobh5C4g9PVnPtgxT5ztU0nQ4',
+        }
+    });
     const data = await response.json();
     console.log("fav");
     console.log(data);
@@ -67,6 +72,7 @@ async function saveFavoriteDog (id) {
         method: "POST",
         headers: {
             'Content-Type': 'application/json',
+            'x-api-key': 'live_Eyci7Tf2jCzBSqoXCrpkAQYglDT6BVE1AxBCNgwoobh5C4g9PVnPtgxT5ztU0nQ4',
         },
         body: JSON.stringify({
             image_id: id,
@@ -89,6 +95,9 @@ async function saveFavoriteDog (id) {
 async function deleteFavoriteDog (id) {
     const res = await fetch(API_URL_FAV_DEL(id), {
         method: "DELETE",
+        headers: {
+            'x-api-key': 'live_Eyci7Tf2jCzBSqoXCrpkAQYglDT6BVE1AxBCNgwoobh5C4g9PVnPtgxT5ztU0nQ4',
+        }
     });
 
     const data = await res.json();

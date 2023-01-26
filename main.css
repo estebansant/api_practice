@@ -57,6 +57,7 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    box-shadow: 2px 5px 8px rgba(0,0,0,0.5);
 }
 .container__image{
     width: 100%;
@@ -87,6 +88,7 @@ body{
     border-radius: 12px;
     margin-top: 10px;
     margin-bottom: 20px;
+    transition: all 0.25s ease-in-out;
 }
 .load__button{
     width: auto;
@@ -100,12 +102,17 @@ body{
     border-radius: 12px;
     margin-top: 60px;
     align-self: center;
+    transition: all 0.25s ease-in-out;
 }
-.button__card:hover{
+.container__footer--button:hover{
     cursor: pointer;
+    scale: 1.05;
+    box-shadow: 0 4px 5px rgba(0,0,0,0.5);
 }
 .load__button:hover{
     cursor: pointer;
+    scale: 1.05;
+    box-shadow: 0 4px 5px rgba(0,0,0,0.5);
 }
 .favorite__dogs{
     width: 100%;
@@ -127,6 +134,7 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    box-shadow: 2px 5px 8px rgba(0,0,0,0.5);
 }
 .favorite__dogs img{
     width: 100%;
@@ -157,4 +165,10 @@ body{
     border-radius: 12px;
     margin-top: 10px;
     margin-bottom: 20px;
+    transition: all 0.25s ease-in-out;
+}
+.favorite__dogs button:hover{
+    cursor: pointer;
+    scale: 1.05;
+    box-shadow: 0 4px 5px rgba(0,0,0,0.5);
 }
