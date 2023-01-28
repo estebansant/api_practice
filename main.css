@@ -28,6 +28,7 @@ body{
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    padding: 25px;
 }
 .subtitle{
     font-size: 3.2rem;
@@ -78,7 +79,7 @@ body{
 }
 .container__footer--button{
     width: auto;
-    height: 50px;
+    height: 45px;
     font-size: 1.8rem;
     font-weight: bold;
     background-color: #bc4749;
@@ -92,7 +93,7 @@ body{
 }
 .load__button{
     width: auto;
-    height: 50px;
+    height: 45px;
     font-size: 1.8rem;
     font-weight: bold;
     background-color: #bc4749;
@@ -155,7 +156,7 @@ body{
 }
 .favorite__dogs button{
     width: auto;
-    height: 50px;
+    height: 45px;
     font-size: 1.8rem;
     font-weight: bold;
     background-color: #bc4749;
@@ -168,6 +169,56 @@ body{
     transition: all 0.25s ease-in-out;
 }
 .favorite__dogs button:hover{
+    cursor: pointer;
+    scale: 1.05;
+    box-shadow: 0 4px 5px rgba(0,0,0,0.5);
+}
+.upload{
+    width: 100vw;
+    height: fit-content;
+    margin-top: 35px;
+}
+.container__form{
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.upload__form{
+    height: 250px;
+    width: 350px;
+    border: 3px solid #f2e8cf;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.upload__form--input{
+    width: auto;
+    height: auto;
+    display: inline-block;
+    border-radius: 12px;
+    color: #f2e8cf;
+    font-size: 14px;
+    padding: 8px;
+}
+.upload__form--button{
+    width: auto;
+    height: 45px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    background-color: #bc4749;
+    color: #242423;
+    border: solid 2px #242423;
+    padding: 10px;
+    border-radius: 12px;
+    margin-top: 30px;
+    align-self: center;
+    transition: all 0.25s ease-in-out;
+}
+.upload__form--button:hover{
     cursor: pointer;
     scale: 1.05;
     box-shadow: 0 4px 5px rgba(0,0,0,0.5);

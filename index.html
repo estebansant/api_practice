@@ -44,12 +44,14 @@
         <button id="button" class="load__button">Load more images</button>
     </section>
 
-    <section id="uploadDog">
+    <section id="uploadDog" class="upload">
         <h2 class="subtitle">Upload a picture of your dog</h2>
-        <form id="uploadForm">
-            <input id="file" type="file" name="file"/>
-            <button type="button" onclick="uploadDogPic()">Upload picture</button>
-        </form>
+        <div class="container__form">
+            <form id="uploadForm" class="upload__form">
+                <input id="file" type="file" name="file" class="upload__form--input"/>
+                <button type="button" onclick="uploadDogPic()" class="upload__form--button">Upload picture</button>
+            </form>
+        </div>        
     </section>
 
     <section class="random__dogs">
